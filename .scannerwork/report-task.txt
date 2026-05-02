@@ -1,0 +1,6 @@
+projectKey=Renodiss
+serverUrl=http://localhost:9000
+serverVersion=25.10.0.114319
+dashboardUrl=http://localhost:9000/dashboard?id=Renodiss
+ceTaskId=e91af112-fb94-42ee-b1ae-cf91ec22c9ac
+ceTaskUrl=http://localhost:9000/api/ce/task?id=e91af112-fb94-42ee-b1ae-cf91ec22c9ac

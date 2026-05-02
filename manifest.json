@@ -1,0 +1,27 @@
+{
+  "name": "ReNoDiSS - Gestión Documental",
+  "short_name": "ReNoDiSS",
+  "description": "Sistema de gestión de documentos normativos con roles Funcional, QA y Soporte",
+  "background_color": "#ffffff",
+  "theme_color": "#1976d2",
+  "orientation": "portrait",
+  "display": "standalone",
+
+  "start_url": "/Renodiss/login.jsp",
+  "scope": "/Renodiss/",
+
+  "lang": "es",
+
+  "icons": [
+    {
+      "src": "/Renodiss/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/Renodiss/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

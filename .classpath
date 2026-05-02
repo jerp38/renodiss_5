@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+    <!-- Código fuente -->
+    <classpathentry kind="src" path="src"/>
+
+    <!-- Librería Jakarta Servlet API -->
+    <classpathentry kind="lib" path="C:\\Users\\jerp2\\Downloads\\Universidad\\sextocuatrimestre\\Practicaprofesional\\apache-tomcat-10.1.48-windows-x64\\apache-tomcat-10.1.48\\webapps\\Renodiss\\WEB-INF\\lib\\jakarta.servlet-api-6.0.0.jar"/>
+
+    <!-- Entorno Java -->
+    <classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+
+    <!-- Carpeta de salida -->
+    <classpathentry kind="output" path="WEB-INF/classes"/>
+</classpath>

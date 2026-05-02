@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee
+                             https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <!-- ======== SERVLET LOGIN ======== -->
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>com.renodiss.controller.LoginServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>LoginServlet</servlet-name>
+        <url-pattern>/LoginServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- ======== SERVLET CARGA DE DOCUMENTOS ======== -->
+    <servlet>
+        <servlet-name>CargarDocumentoServlet</servlet-name>
+        <servlet-class>com.renodiss.controller.CargarDocumentoServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CargarDocumentoServlet</servlet-name>
+        <url-pattern>/CargarDocumentoServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- ======== SERVLET ELIMINAR DOCUMENTOS ======== -->
+    <servlet>
+        <servlet-name>EliminarDocumentoServlet</servlet-name>
+        <servlet-class>com.renodiss.controller.EliminarDocumentoServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>EliminarDocumentoServlet</servlet-name>
+        <url-pattern>/EliminarDocumentoServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- ======== PÁGINA DE BIENVENIDA ======== -->
+    <welcome-file-list>
+        <welcome-file>login.jsp</welcome-file>
+    </welcome-file-list>
+
+</web-app>
