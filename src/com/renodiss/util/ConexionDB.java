@@ -22,6 +22,8 @@ public class ConexionDB {
         // Retornar la conexión
         return DriverManager.getConnection(URL, USER, PASS);
 */
+/*#Conexion Axure
+//Comentario*/
 
     public static Connection getConnection() throws SQLException {
 
