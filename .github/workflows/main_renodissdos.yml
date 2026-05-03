@@ -13,7 +13,7 @@ jobs:
   build:
     runs-on: windows-latest
     permissions:
-      contents: read #This is required for actions/checkout
+      contents: read
 
     steps:
       - uses: actions/checkout@v4
@@ -24,21 +24,24 @@ jobs:
           java-version: '17'
           distribution: 'microsoft'
 
-      - name: Build with Maven
-        run: mvn clean install
+      - name: Create WAR file
+        run: |
+          mkdir target
+          jar cvf target/renodiss-app.war *
+        shell: cmd
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.war'
+          path: 'target/*.war'
 
   deploy:
     runs-on: windows-latest
     needs: build
     permissions:
-      id-token: write #This is required for requesting the JWT
-      contents: read #This is required for actions/checkout
+      id-token: write
+      contents: read
 
     steps:
       - name: Download artifact from build job
@@ -49,15 +52,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_F7237996F49244F08FC0BF191B43C267 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_C04EF820341844059301E5136918FE30 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_EA0B7F3F8CCB464AA05C7F23F348C10F }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_6BC291C6CB5446349BA372018BAC79DB }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_B76C63C1971246FDB28C2F3841978463 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_738BB5A88CC440E0B0CF44EB52AC0EFE }}
 
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'renodissdos'
+          app-name: 'renodiss-app'
           slot-name: 'Production'
           package: '*.war'
-          
