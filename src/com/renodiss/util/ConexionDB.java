@@ -22,12 +22,12 @@ public class ConexionDB {
         // Retornar la conexión
         return DriverManager.getConnection(URL, USER, PASS);
 */
-/*#Conexion Axure
+/*#Conexion Azure
 //Comentario*/
 
     public static Connection getConnection() throws SQLException {
 
-        String host = "service-admin-php.mysql.database.azure.com";
+        String host = "renodiss-app.mysql.database.azure.com";
         String port = "3306";
         String database = "renodiss";
 
