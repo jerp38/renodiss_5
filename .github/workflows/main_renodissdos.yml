@@ -1,5 +1,4 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
+# Docs for the Azure Web Apps Deploy action
 
 name: Build and deploy WAR app to Azure Web App - renodissdos
 
@@ -24,17 +23,22 @@ jobs:
           java-version: '17'
           distribution: 'microsoft'
 
-      - name: Create WAR file
+      - name: Create ROOT.war file
         run: |
           mkdir target
-          jar cvf target/renodiss-app.war *
+          jar cvf target\ROOT.war *
+        shell: cmd
+
+      - name: Verify WAR file
+        run: |
+          dir target
         shell: cmd
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: java-app
-          path: 'target/*.war'
+          path: 'target\ROOT.war'
 
   deploy:
     runs-on: windows-latest
@@ -60,6 +64,6 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'renodiss-app'
+          app-name: 'renodissdos'
           slot-name: 'Production'
-          package: '*.war'
+          package: 'ROOT.war'
